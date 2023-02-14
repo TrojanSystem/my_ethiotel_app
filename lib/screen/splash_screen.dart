@@ -30,7 +30,7 @@ class SplashScreen extends StatelessWidget {
                       ),
                     ),
                     splashScreenWidgets(_height, _width,
-                        "Discover Our Services", {"right": 20, "top": 20}),
+                        "Discover Our Services", {"right": 20, "top": 20},),
                     splashScreenWidgets(
                         _height, _width, "Language", {"right": 20, "top": 70}),
                   ],

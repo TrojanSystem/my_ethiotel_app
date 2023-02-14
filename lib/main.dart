@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ethiotel_app/screen/login_page.dart';
 import 'package:my_ethiotel_app/screen/splash_screen.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyEthiotelApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  SplashScreen(),
+      home:   LoginPage(),
       debugShowCheckedModeBanner: false,
     );
   }
