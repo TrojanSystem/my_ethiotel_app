@@ -29,6 +29,7 @@ Widget splashScreenWidgets(double _height, double _width, String title,Map posit
     ),
   );
 }
+
 Widget splashScreenWidgetsUnPositioned(double _height, double _width, String title,Map position) {
   return Container(
     margin: EdgeInsets.only(right: double.parse((position['right']).toString()),
@@ -36,7 +37,7 @@ Widget splashScreenWidgetsUnPositioned(double _height, double _width, String tit
     height: _height * 0.05,
     width: _width * 0.45,
     decoration: BoxDecoration(
-      color: Colors.grey.shade300,
+      color: Colors.white,
       border: Border.all(
         width: 2,
         color: Colors.green,
