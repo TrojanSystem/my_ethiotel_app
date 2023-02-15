@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:my_ethiotel_app/screen/login_page.dart';
+import 'package:my_ethiotel_app/widgets/button.dart';
 import 'package:my_ethiotel_app/widgets/service_slide.dart';
 
 import '../widgets/splash_screen_widgets.dart';
@@ -12,6 +14,7 @@ class SplashScreen extends StatelessWidget {
     final _width = MediaQuery.of(context).size.width;
     final _height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SizedBox(
           height: _height,
@@ -29,8 +32,12 @@ class SplashScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    splashScreenWidgets(_height, _width,
-                        "Discover Our Services", {"right": 20, "top": 20},),
+                    splashScreenWidgets(
+                      _height,
+                      _width,
+                      "Discover Our Services",
+                      {"right": 20, "top": 20},
+                    ),
                     splashScreenWidgets(
                         _height, _width, "Language", {"right": 20, "top": 70}),
                   ],
@@ -62,18 +69,16 @@ class SplashScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 28.0),
-                      child: SizedBox(
-                        width: 250,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.green, shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0)
-                          ), // This is what you need!
-                          ),
-                          child: const Text('Get started'),
-                        ),
-                      ),
+                      child: Button(
+                          buttonColor: Colors.green,
+                          buttonLabel: 'Get started',
+                          buttonFunction: () {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                              ),
+                            );
+                          }),
                     ),
                   ],
                 ),

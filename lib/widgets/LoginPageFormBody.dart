@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:my_ethiotel_app/screen/forgot_password_screen.dart';
+import 'package:my_ethiotel_app/screen/registration_page.dart';
+import 'package:my_ethiotel_app/widgets/splash_screen_widgets.dart';
 
 import 'LoginFormClassMobile.dart';
 import 'LoginFormClassPassword.dart';
+import 'button.dart';
+
 class LoginPageFormBody extends StatelessWidget {
   const LoginPageFormBody({
     Key? key,
@@ -10,7 +15,8 @@ class LoginPageFormBody extends StatelessWidget {
     required this.phoneNumberNode,
     required this.passwordNode,
     required this.password,
-  }) : _loginFormKey = loginFormKey, super(key: key);
+  })  : _loginFormKey = loginFormKey,
+        super(key: key);
 
   final GlobalKey<FormState> _loginFormKey;
   final TextEditingController phoneNumber;
@@ -36,52 +42,39 @@ class LoginPageFormBody extends StatelessWidget {
               password: password,
               passwordNode: passwordNode,
             ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(18.0, 18, 8, 8),
-              child: Text(
-                'I forgot my password',
-                style: TextStyle(
-                  color: Colors.orange,
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(left: 40, top: 10),
-              width: 300,
-              height: 50,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                          20.0)), // This is what you need!
-                ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(18.0, 18, 8, 8),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => const ForgotPasswordScreen(),
+                    ),
+                  );
+                },
                 child: const Text(
-                  'Sign In',
+                  'I forgot my password',
                   style: TextStyle(
-                    fontSize: 18,
+                    color: Colors.orange,
                   ),
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(18, 8, 8, 8),
-              child: Row(
-                children: [
-                  const Text("Don't have account?"),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: Colors.green,
-                      ),
+            Button(
+                buttonColor: Colors.green,
+                buttonLabel: "Sign In",
+                buttonFunction: () {}),
+            buildExistingAccountChecker(
+                action: 'Sign Up',
+                label: "Don't have account?",
+                color: Colors.green,
+                textFuction: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => RegistrationPage(),
                     ),
-                  )
-                ],
-              ),
-            )
+                  );
+                }),
           ],
         ),
       ),
