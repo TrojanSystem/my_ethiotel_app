@@ -114,28 +114,32 @@ class _LoginPageState extends State<LoginPage> {
                         password: password),
                     Expanded(
                       flex: 1,
-                      child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Padding(
-                            padding: EdgeInsets.fromLTRB(18,8.0,8,8),
+                            padding: EdgeInsets.fromLTRB(18, 8.0, 8, 8),
                             child: Text('Follow us on social media'),
                           ),
-                          Container(margin: EdgeInsets.all(8),
+                          Container(
+                            margin: const EdgeInsets.all(8),
                             width: MediaQuery.of(context).size.width,
-
+                            height: 40,
                             child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                physics: const NeverScrollableScrollPhysics(),
-                                itemBuilder: (context, index) => Container(margin: EdgeInsets.only(left: 8),
-                                      width: 30,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage(iconImage[index]),
-                                        ),
-                                      ),
-                                    ),
-                                itemCount: iconImage.length),
+                              scrollDirection: Axis.horizontal,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (context, index) => Container(
+                                margin: const EdgeInsets.only(left: 8),
+                                width: 30,
+                                height: 30,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(iconImage[index]),
+                                  ),
+                                ),
+                              ),
+                              itemCount: iconImage.length,
+                            ),
                           )
                         ],
                       ),
