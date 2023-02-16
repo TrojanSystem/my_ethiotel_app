@@ -3,6 +3,7 @@ import 'package:my_ethiotel_app/screen/forgot_password_screen.dart';
 import 'package:my_ethiotel_app/screen/registration_page.dart';
 import 'package:my_ethiotel_app/widgets/splash_screen_widgets.dart';
 
+import '../screen/home_page_screen.dart';
 import 'LoginFormClassMobile.dart';
 import 'LoginFormClassPassword.dart';
 import 'button.dart';
@@ -63,7 +64,13 @@ class LoginPageFormBody extends StatelessWidget {
             Button(
                 buttonColor: Colors.green,
                 buttonLabel: "Sign In",
-                buttonFunction: () {}),
+                buttonFunction: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (ctx) => const HomePageScreen(),
+                    ),
+                  );
+                }),
             buildExistingAccountChecker(
                 action: 'Sign Up',
                 label: "Don't have account?",

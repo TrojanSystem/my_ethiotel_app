@@ -5,6 +5,7 @@ import 'package:my_ethiotel_app/widgets/splash_screen_widgets.dart';
 
 import '../widgets/button.dart';
 import '../widgets/constants.dart';
+import 'home_page_screen.dart';
 
 class RegistrationPage extends StatefulWidget {
   RegistrationPage({Key? key}) : super(key: key);
@@ -110,7 +111,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         Button(
                             buttonColor: Colors.blue,
                             buttonLabel: "Sign Up",
-                            buttonFunction: () {}),
+                            buttonFunction: () {Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (ctx) => const HomePageScreen(),
+                              ),
+                            );}),
                         buildExistingAccountChecker(
                             action: 'Login',
                             label: "Already have an account?",

@@ -72,7 +72,7 @@ class Slide extends StatelessWidget {
                     ),
                     Text(
                       e['Text'],
-                      style: TextStyle(fontSize: 10),
+                      style: const TextStyle(fontSize: 10),
                       textAlign: TextAlign.center,
                     )
                   ],
