@@ -113,7 +113,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             buttonLabel: "Sign Up",
                             buttonFunction: () {Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
-                                builder: (ctx) => const HomePageScreen(),
+                                builder: (ctx) =>  HomePageScreen(),
                               ),
                             );}),
                         buildExistingAccountChecker(

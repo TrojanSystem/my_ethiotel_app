@@ -1,6 +1,29 @@
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
+Column buildScreensTitle({required String title}) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      ethioTelecom(),
+      Container(
+        width: double.infinity,
+        height: 80,
+        color: Colors.grey,
+        child: Center(
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 23,
+            ),
+          ),
+        ),
+      )
+    ],
+  );
+}
 Positioned buildHomePageDrawer() {
   return Positioned(
     right: 10,

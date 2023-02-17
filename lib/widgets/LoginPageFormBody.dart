@@ -67,7 +67,7 @@ class LoginPageFormBody extends StatelessWidget {
                 buttonFunction: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (ctx) => const HomePageScreen(),
+                      builder: (ctx) =>  HomePageScreen(),
                     ),
                   );
                 }),

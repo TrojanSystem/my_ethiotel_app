@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:my_ethiotel_app/screen/home_page_screen.dart';
 import 'package:my_ethiotel_app/screen/splash_screen.dart';
 import 'package:my_ethiotel_app/widget_tester.dart';
 
@@ -15,12 +15,12 @@ class MyEthiotelApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'My Ethiotel',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,
       ),
-      home:SplashScreen(),
+      home:HomePageScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
