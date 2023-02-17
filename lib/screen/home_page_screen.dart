@@ -43,10 +43,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
           BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined,size: 35,), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.card_giftcard_rounded,size: 35,), label: 'Promotions'),
+              icon: Icon(Icons.card_giftcard_outlined,size: 35,), label: 'Promotions'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.location_on,size: 35,), label: 'Shop Location'),
-          BottomNavigationBarItem(icon: Icon(Icons.person,size: 35,), label: 'Account'),
+              icon: Icon(Icons.location_on_outlined,size: 35,), label: 'Shop Location'),
+          BottomNavigationBarItem(icon: Icon(Icons.person_outline_outlined,size: 35,), label: 'Account'),
         ],
       ),
     );
