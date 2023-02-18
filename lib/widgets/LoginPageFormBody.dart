@@ -75,7 +75,7 @@ class LoginPageFormBody extends StatelessWidget {
                 action: 'Sign Up',
                 label: "Don't have account?",
                 color: Colors.green,
-                textFuction: () {
+                textFunction: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => RegistrationPage(),

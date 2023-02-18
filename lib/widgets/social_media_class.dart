@@ -12,8 +12,8 @@ class SocialMedialClass extends StatelessWidget {
   Widget build(BuildContext context) {
     Future _callContact(BuildContext context,socialMediaUrl) async {
       final url = socialMediaUrl;
-      if (await canLaunch(url)) {
-        await launch(url);
+      if (await canLaunchUrl(url)) {
+        await launchUrl(url);
       } else {
         const snackbar = SnackBar(content: Text('Can\'t open a URL',textAlign: TextAlign.center,),);
         ScaffoldMessenger.of(context).showSnackBar(snackbar);

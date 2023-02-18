@@ -1,6 +1,153 @@
 import 'package:flutter/material.dart';
+import 'package:my_ethiotel_app/widgets/right_side_drawer.dart';
 
 import 'constants.dart';
+List drawerList = [
+  {
+    'drawerIcon': Icons.family_restroom_rounded,
+    'drawerTitle': "Family Group",
+    'drawerFunction': () {}
+  },
+  {
+    'drawerIcon': Icons.currency_exchange_rounded,
+    'drawerTitle': "Asham tele",
+    'drawerFunction': () {}
+  },
+  {
+    'drawerIcon': Icons.wallet,
+    'drawerTitle': "Packages",
+    'drawerFunction': () {}
+  },
+  {
+    'drawerIcon': Icons.wallet_rounded,
+    'drawerTitle': "Balance Details",
+    'drawerFunction': () {}
+  },
+  {
+    'drawerIcon': Icons.language,
+    'drawerTitle': "IVR/USSD Language",
+    'drawerFunction': () {}
+  },
+  {
+    'drawerIcon': Icons.settings,
+    'drawerTitle': "Security Questions",
+    'drawerFunction': () {}
+  },
+  {
+    'drawerIcon': Icons.print,
+    'drawerTitle': "FAQ",
+    'drawerFunction': () {},
+  },
+  {
+    'drawerIcon': Icons.message,
+    'drawerTitle': "Live Chat",
+    'drawerFunction': () {}
+  },
+  {
+    'drawerIcon': Icons.call,
+    'drawerTitle': "Contact Us",
+    'drawerFunction': () {}
+  },
+];
+SizedBox buildDrawerBody(BuildContext context) {
+  return SizedBox(
+    height: MediaQuery.of(context).size.height * 0.7,
+    child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        // padding: const EdgeInsets.fromLTRB(18, 70, 8, 10),
+        children: drawerList
+            .map(
+              (e) => GestureDetector(
+            onTap: e['drawerFunction'],
+            child: Container(
+              margin:
+              const EdgeInsets.only(bottom: 5, right: 5),
+              height: 53,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Icon(e['drawerIcon']),
+                  ),
+                  Expanded(
+                    flex: 4,
+                    child: Text(
+                      e['drawerTitle'],
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        )
+            .toList()),
+  );
+}
+Row buildDrawerHeader() {
+  return Row(
+    children: [
+      Container(
+        width: 80,
+        height: 80,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(color: Colors.blue, width: 2),
+          borderRadius: BorderRadius.circular(150),
+          image: const DecorationImage(
+            image: AssetImage('assets/images/pp.jpg'),
+          ),
+        ),
+      ),
+      const   SizedBox(width: 15,),
+      Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Surafel Terefe',
+            style: TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 18,
+            ),
+          ),
+          const Text(
+            'Balance',
+            style: TextStyle(
+              color: Colors.greenAccent,
+              fontWeight: FontWeight.w900,
+              fontSize: 18,
+            ),
+          ),
+          Container(
+            width: 120,
+            height: 30,
+            decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.blue,
+                  width: 2,
+                ),
+                borderRadius: BorderRadius.circular(30)),
+            child: const Center(
+              child:  Text(
+                '22.85 Birr',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ],
+  );
+}
+
+
 Column buildScreensTitle({required String title}) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.start,
@@ -24,12 +171,14 @@ Column buildScreensTitle({required String title}) {
     ],
   );
 }
-Positioned buildHomePageDrawer() {
+Positioned buildHomePageDrawer(context) {
   return Positioned(
     right: 10,
     top: 60,
     child: IconButton(
-      onPressed: () {},
+      onPressed: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const RightSideDrawer(),),);
+      },
       icon: const Icon(
         Icons.menu,
         size: 35,
@@ -57,7 +206,7 @@ Positioned ethioTelecom() {
 }
 Positioned buildHomePageProfile(BuildContext context) {
   return Positioned(
-    top: 150,
+    top: 10,
     left: 55,
     child: SizedBox(
       width: MediaQuery.of(context).size.width * 0.7,
@@ -138,14 +287,14 @@ Widget buildBanner() {
   );
 }
 Widget buildExistingAccountChecker(
-    {required String label, required String action,required Color color,required VoidCallback textFuction}) {
+    {required String label, required String action,required Color color,required VoidCallback textFunction}) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(18, 8, 8, 8),
     child: Row(
       children: [
         Text(label),
         TextButton(
-          onPressed:textFuction,
+          onPressed:textFunction,
           child: Text(
             action,
             style:  TextStyle(
@@ -160,13 +309,13 @@ Widget buildExistingAccountChecker(
 }
 
 Widget splashScreenWidgets(
-    double _height, double _width, String title, Map position) {
+    double height, double width, String title, Map position) {
   return Positioned(
     right: double.parse((position['right']).toString()),
     top: double.parse((position['top']).toString()),
     child: Container(
-      height: _height * 0.05,
-      width: _width * 0.45,
+      height: height * 0.05,
+      width: width * 0.45,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -189,14 +338,14 @@ Widget splashScreenWidgets(
 }
 
 Widget splashScreenWidgetsUnPositioned(
-    double _height, double _width, String title, Map position) {
+    double height, double width, String title, Map position) {
   return Container(
     margin: EdgeInsets.only(
       right: double.parse((position['right']).toString()),
       top: double.parse((position['top']).toString()),
     ),
-    height: _height * 0.05,
-    width: _width * 0.45,
+    height: height * 0.05,
+    width: width * 0.45,
     decoration: BoxDecoration(
       color: Colors.white,
       border: Border.all(

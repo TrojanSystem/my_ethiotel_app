@@ -6,7 +6,7 @@ import 'package:my_ethiotel_app/screen/shop_location_screen.dart';
 
 
 class HomePageScreen extends StatefulWidget {
-  HomePageScreen({Key? key}) : super(key: key);
+  const HomePageScreen({Key? key}) : super(key: key);
 
   @override
   State<HomePageScreen> createState() => _HomePageScreenState();
@@ -15,11 +15,11 @@ class HomePageScreen extends StatefulWidget {
 class _HomePageScreenState extends State<HomePageScreen> {
   int screenIndex = 0;
 
-  List screenPage = const [
+  List screenPage =  [
     MainScreen(),
-    PromotionsScreen(),
-    ShopLocationScreen(),
-    AccountProfile(),
+    const PromotionsScreen(),
+    const  ShopLocationScreen(),
+    const AccountProfile(),
   ];
 
   @override

@@ -120,7 +120,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                             action: 'Login',
                             label: "Already have an account?",
                             color: Colors.blue,
-                            textFuction: () {
+                            textFunction: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (context) => LoginPage(),

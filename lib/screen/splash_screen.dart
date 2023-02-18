@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:my_ethiotel_app/screen/login_page.dart';
 import 'package:my_ethiotel_app/widgets/button.dart';
