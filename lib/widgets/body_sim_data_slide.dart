@@ -14,7 +14,7 @@ class BodySimDataSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 135),
+      margin: const EdgeInsets.only(top: 125),
       alignment: Alignment.center,
       child: Transform.rotate(
         angle: -math.pi / 15,
@@ -60,8 +60,8 @@ class BodySimDataSlide extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.green, width: 2),
-                            borderRadius: BorderRadius.circular(50),
+                            border: Border.all(color: Colors.green, width: 3),
+                            borderRadius: BorderRadius.circular(45),
                             color: Colors.white,
                           ),
                           width: 200,
