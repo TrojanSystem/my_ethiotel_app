@@ -5,7 +5,7 @@ import '../widgets/body_sim_data_slide.dart';
 import '../widgets/splash_screen_widgets.dart';
 
 class MainScreen extends StatelessWidget {
-  MainScreen({Key? key}) : super(key: key);
+  const MainScreen({Key? key}) : super(key: key);
 
 
   @override

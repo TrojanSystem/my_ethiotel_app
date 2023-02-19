@@ -167,7 +167,7 @@ Column buildScreensTitle({required String title}) {
             ),
           ),
         ),
-      )
+      ),
     ],
   );
 }
