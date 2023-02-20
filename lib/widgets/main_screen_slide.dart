@@ -14,71 +14,19 @@ class MainScreenSlider extends StatefulWidget {
 }
 
 class _MainScreenSliderState extends State<MainScreenSlider> {
-  final ScrollController _controller = ScrollController();
+  final CarouselController _controller = CarouselController();
   List<Widget> serviceWidget = [
-    Container(
-      child: Text('1'),
-      width: 100,
-      margin: EdgeInsets.only(left: 10, right: 10),
+    Container(child: Text('1'),
+      width: 250,margin: const EdgeInsets.only(left: 10,right: 10),
       height: 100,
       color: Colors.yellow,
     ),
-    Container(
-      child: Text('10'),
-      width: 100,
-      height: 100,
-      margin: EdgeInsets.only(left: 10, right: 10),
+    Container(child: Text('10'),
+      width: 250,
+      height: 100,margin: const EdgeInsets.only(left: 10,right: 10),
       color: Colors.yellow,
     ),
-    Container(
-      child: Text('3'),
-      width: 100,
-      height: 100,
-      margin: EdgeInsets.only(left: 10, right: 10),
-      color: Colors.yellow,
-    ),
-    Container(
-      child: Text('4'),
-      width: 100,
-      height: 100,
-      margin: EdgeInsets.only(left: 10, right: 10),
-      color: Colors.yellow,
-    ),
-    Container(
-      child: Text('10'),
-      width: 100,
-      height: 100,
-      color: Colors.yellow,
-      margin: EdgeInsets.only(left: 10, right: 10),
-    ),
-    Container(
-      child: Text('6'),
-      width: 100,
-      height: 100,
-      margin: EdgeInsets.only(left: 10, right: 10),
-      color: Colors.yellow,
-    ),
-    Container(
-      child: Text('7'),
-      width: 100,
-      height: 100,
-      margin: EdgeInsets.only(left: 10, right: 10),
-      color: Colors.yellow,
-    ),
-    Container(
-      child: Text('8'),
-      width: 100,
-      height: 100,
-      margin: EdgeInsets.only(left: 10, right: 10),
-      color: Colors.yellow,
-    ),
-    Container(
-      child: Text('9'),
-      width: 100,
-      height: 100,
-      margin: EdgeInsets.only(left: 10, right: 10),
-      color: Colors.yellow,
-    )
+
   ];
 
   @override
@@ -90,32 +38,26 @@ class _MainScreenSliderState extends State<MainScreenSlider> {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        ListView.builder(controller:_controller,
-          scrollDirection: Axis.horizontal,
-          itemCount: 9,
-          itemBuilder: (context, index) => Container(
-            child: Text('9'),
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.only(left: 10, right: 10),
-            color: Colors.yellow,
+        CarouselSlider(
+          items: serviceWidget,
+          options: CarouselOptions(disableCenter: true,
+           viewportFraction: 0.25,
+            height: 200,
+            reverse:false
           ),
+          carouselController: _controller,
         ),
         Positioned(
           left: 0,
           child: ElevatedButton(
-            onPressed: () { _controller.jumpTo(120} ,
+            onPressed: () => _controller.previousPage(),
             child: const Text('←'),
           ),
         ),
         Positioned(
           right: 0,
           child: ElevatedButton(
-            onPressed: () {_controller.animateTo(1
- ,
-              duration: Duration(seconds: 2),
-              curve: Curves.fastOutSlowIn,
-            );} ,
+            onPressed: () => _controller.nextPage(),
             child: const Text('→'),
           ),
         ),
