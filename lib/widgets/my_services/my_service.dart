@@ -19,7 +19,8 @@ class _MyServiceState extends State<MyService> {
 
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildScreensTitle(title: 'My Services'),
+          buildScreensForSubScreenTitle(title: 'My Services',context: context),
+
           const  Padding(
             padding: EdgeInsets.fromLTRB(4,8,8,8,),
             child: Text(

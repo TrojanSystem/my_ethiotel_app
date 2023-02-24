@@ -42,13 +42,14 @@ class MainScreen extends StatelessWidget {
               BodySimDataSlide(),
               buildHomePageProfile(context),
               Positioned(
-                  bottom: 0,
-                  child: Container(
-                    color: Colors.blue,
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    child: const MainScreenSlider(),
-                  ),)
+                bottom: 0,
+                child: Container(
+                //  margin: const EdgeInsets.only(bottom: 10,left: 10,right: 10),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.15,
+                  child: const MainScreenSlider(),
+                ),
+              )
             ],
           ),
         ),

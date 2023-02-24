@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../button.dart';
-import '../packages/package_type.dart';
 import '../widget_collection.dart';
 import 'airtime_recharge.dart';
 
@@ -33,7 +31,8 @@ class _RechargePaymentState extends State<RechargePayment> {
     return Scaffold(
       body: Column(
         children: [
-          buildScreensTitle(title: 'Recharge/Payment '),
+          buildScreensForSubScreenTitle(title:'Recharge/Payment ',context: context),
+
           const SizedBox(
             height: 50,
           ),

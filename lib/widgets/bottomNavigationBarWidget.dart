@@ -26,7 +26,7 @@ Container(),
 
   Container buildMyNavBar(BuildContext context) {
     return Container(
-      height: 60,
+      height: 50,
       decoration: BoxDecoration(
         color: Theme.of(context).primaryColor,
 
@@ -45,12 +45,12 @@ Container(),
                 ? const Icon(
               Icons.home_filled,
               color: Colors.white,
-              size: 35,
+              size: 30,
             )
                 : const Icon(
               Icons.home_outlined,
               color: Colors.white,
-              size: 35,
+              size: 30,
             ),
           ),
           IconButton(
@@ -64,12 +64,12 @@ Container(),
                 ? const Icon(
               Icons.work_rounded,
               color: Colors.white,
-              size: 35,
+              size: 30,
             )
                 : const Icon(
               Icons.work_outline_outlined,
               color: Colors.white,
-              size: 35,
+              size: 30,
             ),
           ),
           IconButton(
@@ -83,12 +83,12 @@ Container(),
                 ? const Icon(
               Icons.widgets_rounded,
               color: Colors.white,
-              size: 35,
+              size: 30,
             )
                 : const Icon(
               Icons.widgets_outlined,
               color: Colors.white,
-              size: 35,
+              size: 30,
             ),
           ),
           IconButton(
@@ -102,12 +102,12 @@ Container(),
                 ? const Icon(
               Icons.person,
               color: Colors.white,
-              size: 35,
+              size: 30,
             )
                 : const Icon(
               Icons.person_outline,
               color: Colors.white,
-              size: 35,
+              size: 30,
             ),
           ),
         ],

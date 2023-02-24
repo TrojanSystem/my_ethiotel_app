@@ -35,14 +35,31 @@ class _CreateYourOwnPackageState extends State<CreateYourOwnPackage> {
                   width: MediaQuery.of(context).size.width,
                   height: 80,
                   color: Colors.grey,
-                  child: const Center(
-                    child: Text(
-                      'Create Your Own Package',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w900,
-                        fontSize: 23,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: const Icon(Icons.arrow_back),
+                        ),
                       ),
-                    ),
+                      const Expanded(
+                        flex: 7,
+                        child: Center(
+                          child: Text(
+                            'Create Your Own Package',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 23,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

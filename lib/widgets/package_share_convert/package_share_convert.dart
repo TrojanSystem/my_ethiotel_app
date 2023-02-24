@@ -10,7 +10,8 @@ class PackageShareConvert extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          buildScreensTitle(title: 'Packages Share/Convert'),
+          buildScreensForSubScreenTitle(title:'Packages Share/Convert',context: context),
+
           const SizedBox(
             height: 50,
           ),

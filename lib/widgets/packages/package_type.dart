@@ -22,7 +22,8 @@ class PackageType extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          buildScreensTitle(title: packageTitle),
+          buildScreensForSubScreenTitle(title:packageTitle,context: context),
+
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.697,

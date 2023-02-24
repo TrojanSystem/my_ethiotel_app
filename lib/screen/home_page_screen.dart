@@ -16,10 +16,10 @@ class _HomePageScreenState extends State<HomePageScreen> {
   int screenIndex = 0;
 
   List screenPage =  [
-    MainScreen(),
+    const MainScreen(),
     const PromotionsScreen(),
     const  ShopLocationScreen(),
-     AccountProfile(),
+     const AccountProfile(),
   ];
 
   @override

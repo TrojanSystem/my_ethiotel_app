@@ -13,8 +13,8 @@ const  Package({Key? key}) : super(key: key);
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        children: [
-          buildScreensTitle(title: 'Packages'),
+        children: [buildScreensForSubScreenTitle(title:'Packages',context: context),
+
           const SizedBox(
             height: 50,
           ),
