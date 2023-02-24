@@ -16,13 +16,12 @@ class _SetNewPasswordState extends State<SetNewPassword> {
   bool showPassword = false;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext contextPas) {
     return Scaffold(
       body: Column(
         children: [
-          buildScreensTitle(
-            title: 'Set a New Password',
-          ),
+          buildScreensForSubScreenTitle( title: 'Set a New Password',context: contextPas),
+
           const SizedBox(
             height: 50,
           ),
@@ -63,7 +62,7 @@ class _SetNewPasswordState extends State<SetNewPassword> {
             padding: const EdgeInsets.only(left: 16.0, top: 16),
             child: Text(
               title,
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
           Padding(

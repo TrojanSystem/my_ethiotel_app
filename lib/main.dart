@@ -4,6 +4,7 @@ import 'package:my_ethiotel_app/screen/splash_screen.dart';
 
 
 
+
 void main() {
   runApp(const MyEthiotelApp());
 }

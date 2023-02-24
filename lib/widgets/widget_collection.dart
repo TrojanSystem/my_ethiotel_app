@@ -180,14 +180,72 @@ Column buildScreensTitle({required String title}) {
         width: double.infinity,
         height: 80,
         color: Colors.grey,
-        child: Center(
-          child: Text(
-            title,
-            style: const TextStyle(
-              fontWeight: FontWeight.w900,
-              fontSize: 23,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Expanded(
+            //   flex: 1,
+            //   child: IconButton(
+            //     onPressed: () {
+            //
+            //     },
+            //     icon: const Icon(Icons.arrow_back),
+            //   ),
+            // ),
+            Expanded(
+              flex: 7,
+              child: Center(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 23,
+                  ),
+                ),
+              ),
             ),
-          ),
+          ],
+        ),
+      ),
+    ],
+  );
+}
+
+Column buildScreensForSubScreenTitle({required String title, context}) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      ethioTelecom(),
+      Container(
+        width: double.infinity,
+        height: 80,
+        color: Colors.grey,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              flex: 1,
+              child: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(Icons.arrow_back),
+              ),
+            ),
+            Expanded(
+              flex: 7,
+              child: Center(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 23,
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     ],
