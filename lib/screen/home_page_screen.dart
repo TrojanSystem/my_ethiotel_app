@@ -19,7 +19,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
     MainScreen(),
     const PromotionsScreen(),
     const  ShopLocationScreen(),
-    const AccountProfile(),
+     AccountProfile(),
   ];
 
   @override

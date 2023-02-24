@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_ethiotel_app/widgets/right_side_drawer.dart';
 
 import 'constants.dart';
+
 List drawerList = [
   {
     'drawerIcon': Icons.family_restroom_rounded,
@@ -49,6 +50,7 @@ List drawerList = [
     'drawerFunction': () {}
   },
 ];
+
 SizedBox buildDrawerBody(BuildContext context) {
   return SizedBox(
     height: MediaQuery.of(context).size.height * 0.7,
@@ -58,34 +60,33 @@ SizedBox buildDrawerBody(BuildContext context) {
         children: drawerList
             .map(
               (e) => GestureDetector(
-            onTap: e['drawerFunction'],
-            child: Container(
-              margin:
-              const EdgeInsets.only(bottom: 5, right: 5),
-              height: 53,
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Icon(e['drawerIcon']),
+                onTap: e['drawerFunction'],
+                child: Container(
+                  margin: const EdgeInsets.only(bottom: 5, right: 5),
+                  height: 53,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Icon(e['drawerIcon']),
+                      ),
+                      Expanded(
+                        flex: 4,
+                        child: Text(
+                          e['drawerTitle'],
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 17),
+                        ),
+                      )
+                    ],
                   ),
-                  Expanded(
-                    flex: 4,
-                    child: Text(
-                      e['drawerTitle'],
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17),
-                    ),
-                  )
-                ],
+                ),
               ),
-            ),
-          ),
-        )
+            )
             .toList()),
   );
 }
+
 Row buildDrawerHeader() {
   return Row(
     children: [
@@ -101,7 +102,9 @@ Row buildDrawerHeader() {
           ),
         ),
       ),
-      const   SizedBox(width: 15,),
+      const SizedBox(
+        width: 15,
+      ),
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,7 +134,7 @@ Row buildDrawerHeader() {
                 ),
                 borderRadius: BorderRadius.circular(30)),
             child: const Center(
-              child:  Text(
+              child: Text(
                 '22.85 Birr',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -147,6 +150,25 @@ Row buildDrawerHeader() {
   );
 }
 
+Widget buildPackageButtons({context, buttonTitle, buttonFunction}) {
+  return GestureDetector(
+    onTap: buttonFunction,
+    child: Container(
+      width: MediaQuery.of(context).size.width * 0.90,
+      height: 70,
+      decoration: BoxDecoration(
+        color: Colors.blue[800],
+        borderRadius: BorderRadius.circular(40),
+      ),
+      child: Center(
+        child: Text(
+          buttonTitle,
+          style: kPackageButtons,
+        ),
+      ),
+    ),
+  );
+}
 
 Column buildScreensTitle({required String title}) {
   return Column(
@@ -171,13 +193,18 @@ Column buildScreensTitle({required String title}) {
     ],
   );
 }
+
 Positioned buildHomePageDrawer(context) {
   return Positioned(
     right: 10,
     top: 60,
     child: IconButton(
-      onPressed: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const RightSideDrawer(),),);
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (ctx) => const RightSideDrawer(),
+          ),
+        );
       },
       icon: const Icon(
         Icons.menu,
@@ -187,6 +214,7 @@ Positioned buildHomePageDrawer(context) {
     ),
   );
 }
+
 Positioned ethioTelecom() {
   return Positioned(
     left: 10,
@@ -204,6 +232,7 @@ Positioned ethioTelecom() {
     ),
   );
 }
+
 Positioned buildHomePageProfile(BuildContext context) {
   return Positioned(
     top: 10,
@@ -245,8 +274,7 @@ Positioned buildHomePageProfile(BuildContext context) {
                 borderRadius: BorderRadius.circular(30)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-
-              children:const [
+              children: const [
                 Text(
                   '912654975',
                   textAlign: TextAlign.center,
@@ -258,7 +286,6 @@ Positioned buildHomePageProfile(BuildContext context) {
                 Icon(
                   Icons.chevron_right_rounded,
                   color: Colors.blue,
-
                 ),
               ],
             ),
@@ -268,39 +295,40 @@ Positioned buildHomePageProfile(BuildContext context) {
     ),
   );
 }
+
 Widget buildBanner() {
-  return  Container(
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: Colors.grey.withOpacity(0.5),
-            width: 2,
-          ),
-        ),
-        image: const DecorationImage(
-          alignment: Alignment.centerLeft,
-          fit: BoxFit.contain,
-          image: AssetImage('assets/images/images.jpeg'),
+  return Container(
+    decoration: BoxDecoration(
+      border: Border(
+        bottom: BorderSide(
+          color: Colors.grey.withOpacity(0.5),
+          width: 2,
         ),
       ),
-
+      image: const DecorationImage(
+        alignment: Alignment.centerLeft,
+        fit: BoxFit.contain,
+        image: AssetImage('assets/images/images.jpeg'),
+      ),
+    ),
   );
 }
+
 Widget buildExistingAccountChecker(
-    {required String label, required String action,required Color color,required VoidCallback textFunction}) {
+    {required String label,
+    required String action,
+    required Color color,
+    required VoidCallback textFunction}) {
   return Padding(
     padding: const EdgeInsets.fromLTRB(18, 8, 8, 8),
     child: Row(
       children: [
         Text(label),
         TextButton(
-          onPressed:textFunction,
+          onPressed: textFunction,
           child: Text(
             action,
-            style:  TextStyle(
-              color: color,
-              fontWeight: FontWeight.bold
-            ),
+            style: TextStyle(color: color, fontWeight: FontWeight.bold),
           ),
         )
       ],

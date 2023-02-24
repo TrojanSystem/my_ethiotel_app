@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_ethiotel_app/screen/login_page.dart';
-import 'package:my_ethiotel_app/widgets/LoginFormClassMobile.dart';
-import 'package:my_ethiotel_app/widgets/splash_screen_widgets.dart';
+import 'package:my_ethiotel_app/widgets/login/LoginFormClassMobile.dart';
+import 'package:my_ethiotel_app/widgets/widget_collection.dart';
 
 import '../widgets/button.dart';
 import '../widgets/constants.dart';

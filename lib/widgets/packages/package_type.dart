@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../my_services/my_service_list.dart';
-import '../splash_screen_widgets.dart';
+import '../widget_collection.dart';
 
 class PackageType extends StatelessWidget {
   PackageType({required this.packageTitle});

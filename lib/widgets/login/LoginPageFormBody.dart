@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:my_ethiotel_app/screen/forgot_password_screen.dart';
 import 'package:my_ethiotel_app/screen/registration_page.dart';
-import 'package:my_ethiotel_app/widgets/splash_screen_widgets.dart';
+import 'package:my_ethiotel_app/widgets/widget_collection.dart';
 
-import '../screen/home_page_screen.dart';
+import '../../screen/home_page_screen.dart';
 import 'LoginFormClassMobile.dart';
+
+import '../button.dart';
 import 'LoginFormClassPassword.dart';
-import 'button.dart';
 
 class LoginPageFormBody extends StatelessWidget {
   const LoginPageFormBody({
@@ -67,7 +68,7 @@ class LoginPageFormBody extends StatelessWidget {
                 buttonFunction: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (ctx) =>  HomePageScreen(),
+                      builder: (ctx) => HomePageScreen(),
                     ),
                   );
                 }),

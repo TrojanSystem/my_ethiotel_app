@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../splash_screen_widgets.dart';
+import '../widget_collection.dart';
 import 'my_service_list.dart';
 
 class MyService extends StatefulWidget {

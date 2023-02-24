@@ -4,7 +4,7 @@ import 'package:my_ethiotel_app/screen/login_page.dart';
 import 'package:my_ethiotel_app/widgets/button.dart';
 import 'package:my_ethiotel_app/widgets/service_slide.dart';
 
-import '../widgets/splash_screen_widgets.dart';
+import '../widgets/widget_collection.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({Key? key}) : super(key: key);

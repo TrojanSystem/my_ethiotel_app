@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_ethiotel_app/widgets/splash_screen_widgets.dart';
+import 'package:my_ethiotel_app/widgets/widget_collection.dart';
 
 class RightSideDrawer extends StatelessWidget {
   const RightSideDrawer({Key? key}) : super(key: key);

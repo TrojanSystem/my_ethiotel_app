@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ethiotel_app/screen/splash_screen.dart';
-import 'package:my_ethiotel_app/widgets/packages/create_your_own_package.dart';
+
 
 
 
@@ -20,7 +20,7 @@ class MyEthiotelApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: CreateYourOwnPackage(),
+      home:  SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

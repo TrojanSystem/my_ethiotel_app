@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_ethiotel_app/screen/splash_screen.dart';
-
-import '../widgets/LoginFormClassMobile.dart';
-import '../widgets/LoginFormClassPassword.dart';
-import '../widgets/LoginPageFormBody.dart';
+import '../widgets/login/LoginPageFormBody.dart';
 import '../widgets/constants.dart';
 import '../widgets/social_media_class.dart';
-import '../widgets/splash_screen_widgets.dart';
+import '../widgets/widget_collection.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);

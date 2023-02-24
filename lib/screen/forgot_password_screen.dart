@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ethiotel_app/widgets/button.dart';
-import 'package:my_ethiotel_app/widgets/splash_screen_widgets.dart';
+import 'package:my_ethiotel_app/widgets/widget_collection.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);

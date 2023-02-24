@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/splash_screen_widgets.dart';
+import '../widgets/widget_collection.dart';
 class ShopLocationScreen extends StatelessWidget {
   const ShopLocationScreen({Key? key}) : super(key: key);
 

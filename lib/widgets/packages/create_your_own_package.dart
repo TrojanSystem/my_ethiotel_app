@@ -54,7 +54,7 @@ class _CreateYourOwnPackageState extends State<CreateYourOwnPackage> {
                     Container(
                       width: MediaQuery.of(context).size.width * 0.85,
                       height: 60,
-                      padding: EdgeInsets.only(left: 25, right: 25),
+                      padding: const EdgeInsets.only(left: 25, right: 25),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Colors.blue, width: 2),
@@ -105,8 +105,9 @@ class _CreateYourOwnPackageState extends State<CreateYourOwnPackage> {
                     SliderTheme(
                         data: const SliderThemeData(
                           trackHeight: 15,
-                          thumbShape:
-                              RoundSliderThumbShape(enabledThumbRadius: 15,),
+                          thumbShape: RoundSliderThumbShape(
+                            enabledThumbRadius: 15,
+                          ),
                           thumbColor: Colors.white,
                         ),
                         child: Slider(
@@ -120,7 +121,7 @@ class _CreateYourOwnPackageState extends State<CreateYourOwnPackage> {
                           },
                         )),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(25,0,18,0),
+                      padding: const EdgeInsets.fromLTRB(25, 0, 18, 0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
@@ -142,7 +143,7 @@ class _CreateYourOwnPackageState extends State<CreateYourOwnPackage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
+                    Builder(builder: (context)=>SizedBox(
                       width: 80,
                       height: 50,
                       child: TextFormField(
@@ -153,8 +154,10 @@ class _CreateYourOwnPackageState extends State<CreateYourOwnPackage> {
                           enabledBorder: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(),
                         ),
+                        onSaved: (enteredValue) {},
                       ),
-                    ),
+                    ),),
+
                     SizedBox(
                       width: 80,
                       height: 50,

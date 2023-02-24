@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_ethiotel_app/widgets/packages/package_type.dart';
 
 import '../constants.dart';
-import '../splash_screen_widgets.dart';
+import '../widget_collection.dart';
 
 class Package extends StatelessWidget {
 const  Package({Key? key}) : super(key: key);
@@ -39,23 +39,5 @@ const  Package({Key? key}) : super(key: key);
     );
   }
 
-  GestureDetector buildPackageButtons({context, buttonTitle, buttonFunction}) {
-    return GestureDetector(
-      onTap: buttonFunction,
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.90,
-        height: 70,
-        decoration: BoxDecoration(
-          color: Colors.blue[800],
-          borderRadius: BorderRadius.circular(40),
-        ),
-        child: Center(
-          child: Text(
-            buttonTitle,
-            style: kPackageButtons,
-          ),
-        ),
-      ),
-    );
-  }
+
 }

@@ -3,7 +3,7 @@ import 'package:my_ethiotel_app/widgets/main_screen_slide.dart';
 import 'package:my_ethiotel_app/widgets/right_side_drawer.dart';
 
 import '../widgets/body_sim_data_slide.dart';
-import '../widgets/splash_screen_widgets.dart';
+import '../widgets/widget_collection.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -47,7 +47,7 @@ class MainScreen extends StatelessWidget {
                     color: Colors.blue,
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.15,
-                    child: MainScreenSlider(),
+                    child: const MainScreenSlider(),
                   ),)
             ],
           ),
