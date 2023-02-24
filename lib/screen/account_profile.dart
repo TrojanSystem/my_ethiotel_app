@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_ethiotel_app/widgets/account/password_changer_screen.dart';
+import 'package:my_ethiotel_app/widgets/account/update_profile.dart';
 
 import '../widgets/widget_collection.dart';
 
 class AccountProfile extends StatelessWidget {
- const AccountProfile({Key? key}) : super(key: key);
+  const AccountProfile({Key? key}) : super(key: key);
   final bool isChange = false;
 
   @override
@@ -13,20 +15,35 @@ class AccountProfile extends StatelessWidget {
       body: Column(
         children: [
           buildScreensTitle(title: 'Account'),
-          buildHeaderSurafel(),
+          buildHeaderSurafel(function:() {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (ctx) => const UpdateProfile(),
+              ),
+            );
+          }, ),
           buildPasswordReset(
+            function: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (ctx) => const SetNewPassword(),
+                ),
+              );
+            },
             isChange: true,
             image: 'assets/images/reset-password.png',
             title: 'Change Password',
             subtitle: 'Change your password',
           ),
           buildPasswordReset(
+            function: () {},
             isChange: false,
             image: 'assets/images/up-arrow.png',
             title: 'Update',
             subtitle: 'Check new version for update',
           ),
           buildPasswordReset(
+            function: () {},
             isChange: false,
             image: 'assets/images/setting.png',
             title: 'App Version',
@@ -72,7 +89,7 @@ class AccountProfile extends StatelessWidget {
     );
   }
 
-  Container buildPasswordReset({image, title, subtitle, isChange}) {
+  Container buildPasswordReset({image, title, subtitle, isChange, function}) {
     return Container(
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.only(bottom: 15),
@@ -115,13 +132,14 @@ class AccountProfile extends StatelessWidget {
         ),
         subtitle: const Text('Change your password'),
         trailing: isChange
-            ? buildAccountPageNextButton(bgColor: Colors.transparent)
+            ? buildAccountPageNextButton(
+                bgColor: Colors.transparent, buttonFunction: function)
             : const Text(''),
       ),
     );
   }
 
-  Container buildHeaderSurafel() {
+  Container buildHeaderSurafel({function}) {
     return Container(
       padding: const EdgeInsets.only(left: 16),
       height: 100,
@@ -156,6 +174,7 @@ class AccountProfile extends StatelessWidget {
           Expanded(
             flex: 1,
             child: buildAccountPageNextButton(
+              buttonFunction: function,
               bgColor: const Color.fromRGBO(241, 220, 167, 1),
             ),
           ),
@@ -164,13 +183,13 @@ class AccountProfile extends StatelessWidget {
     );
   }
 
-  Container buildAccountPageNextButton({bgColor}) {
+  Container buildAccountPageNextButton({bgColor, buttonFunction}) {
     return Container(
       width: 60,
       height: 60,
       decoration: BoxDecoration(color: bgColor, shape: BoxShape.circle),
       child: IconButton(
-        onPressed: () {},
+        onPressed: buttonFunction,
         icon: const Icon(
           Icons.arrow_right_alt_rounded,
           size: 35,
