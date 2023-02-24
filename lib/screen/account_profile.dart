@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../widgets/widget_collection.dart';
 
 class AccountProfile extends StatelessWidget {
-  AccountProfile({Key? key}) : super(key: key);
-  bool isChange = false;
+ const AccountProfile({Key? key}) : super(key: key);
+  final bool isChange = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class AccountProfile extends StatelessWidget {
                 height: 55,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  color: Color.fromRGBO(241, 220, 167, 1),
+                  color: const Color.fromRGBO(241, 220, 167, 1),
                 ),
                 padding: const EdgeInsets.all(10),
                 child: Container(
@@ -50,7 +50,7 @@ class AccountProfile extends StatelessWidget {
                   height: 55,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: Color.fromRGBO(241, 220, 167, 1),
+                    color: const Color.fromRGBO(241, 220, 167, 1),
                     image: const DecorationImage(
                       fit: BoxFit.contain,
                       image: AssetImage('assets/images/logout.png'),
@@ -91,7 +91,7 @@ class AccountProfile extends StatelessWidget {
           height: 55,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),
-            color: Color.fromRGBO(241, 220, 167, 1),
+            color: const Color.fromRGBO(241, 220, 167, 1),
           ),
           padding: const EdgeInsets.all(8),
           child: Container(
@@ -99,7 +99,7 @@ class AccountProfile extends StatelessWidget {
             height: 55,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
-              color: Color.fromRGBO(241, 220, 167, 1),
+              color: const Color.fromRGBO(241, 220, 167, 1),
               image: DecorationImage(
                 image: AssetImage(image),
               ),
@@ -116,7 +116,7 @@ class AccountProfile extends StatelessWidget {
         subtitle: const Text('Change your password'),
         trailing: isChange
             ? buildAccountPageNextButton(bgColor: Colors.transparent)
-            : Text(''),
+            : const Text(''),
       ),
     );
   }
@@ -156,7 +156,7 @@ class AccountProfile extends StatelessWidget {
           Expanded(
             flex: 1,
             child: buildAccountPageNextButton(
-              bgColor: Color.fromRGBO(241, 220, 167, 1),
+              bgColor: const Color.fromRGBO(241, 220, 167, 1),
             ),
           ),
         ],
