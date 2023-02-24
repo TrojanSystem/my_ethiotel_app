@@ -43,7 +43,7 @@ class MainScreen extends StatelessWidget {
               buildHomePageProfile(context),
               Positioned(
                 bottom: 0,
-                child: Container(
+                child: SizedBox(
                 //  margin: const EdgeInsets.only(bottom: 10,left: 10,right: 10),
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.15,

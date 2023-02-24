@@ -14,7 +14,7 @@ class BodySimDataSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 125),
+      margin: const EdgeInsets.only(top: 120),
       alignment: Alignment.center,
       child: Transform.rotate(
         angle: -math.pi / 15,
@@ -61,11 +61,11 @@ class BodySimDataSlide extends StatelessWidget {
                         Container(
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.green, width: 3),
-                            borderRadius: BorderRadius.circular(45),
+                            borderRadius: BorderRadius.circular(40),
                             color: Colors.white,
                           ),
-                          width: 200,
-                          height: 120,
+                          width: 180,
+                          height: 100,
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +73,7 @@ class BodySimDataSlide extends StatelessWidget {
                               Text(
                                 e['image'],
                                 style: const TextStyle(
-                                  fontSize: 30,
+                                  fontSize: 25,
                                   fontWeight: FontWeight.w800,
                                   color: Colors.green,
                                 ),
@@ -82,7 +82,7 @@ class BodySimDataSlide extends StatelessWidget {
                               Text(
                                 e['Text'],
                                 style: const TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
                                 textAlign: TextAlign.center,
